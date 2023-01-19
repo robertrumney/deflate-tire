@@ -1,14 +1,19 @@
-# Deflate Tire Script
+# Deflate Tire
 
-This script uses mesh deformation and coroutines to gradually deflate a tire in Unity over time with adjustable deflation amount and time, assigns the tire mesh at runtime and calls the deflate function automatically.
+A Unity script that allows you to deflate a tire gradually over time.
 
-## Usage
-1. When a tire is shot, add the script to the tire object using the "Add Component" option in Unity
-2. The tire mesh will be automatically assigned at runtime
-3. The tire will start deflating automatically once the script is added
-4. The deflation amount and time can be set as readonly variables
+## Getting Started
 
-## Notes
-- Make sure the object you are attaching the script to has a MeshFilter component
-- If you want to stop the deflate process you can add a stop function and call it when you want to stop the deflation process
-- You should also consider deactivating the wheel collider on the deflated tire and activate another collider like a capsule collider that represents a deflated tire shape, this will make the vehicle physics act accordingly when the tire is deflated.
+To get started, simply add the DeflateTire script to a GameObject in your Unity scene that has a MeshFilter and a WheelCollider component attached. In the Unity editor, you can then set the tire mesh, deflation amount, deflation time, and wheel collider that you want to use.
+
+## Using the Script
+
+To deflate the tire, you can call the Deflate() function on the DeflateTire component. For example, you could add a button in your UI that calls the function when clicked.
+
+## Customizing the Script
+
+You can customize the amount and time of deflation by adjusting the deflationAmount and deflationTime fields in the Unity editor. You can also change the tire mesh and wheel collider that is used by the script.
+
+## Note
+
+This script uses the original vertices of the tire to make sure it won't become completely flat.
